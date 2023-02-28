@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+  Article #{{ article_id }}
+{% endblock %}
+{% block body %}
+<div class="row">
+  <h1>{{ article['title'] }}</h1>
+  <div class="card">
+    <div class="card-body">
+      <h6 class="card-subtitle mb-2 text-muted">Author:
+        <a href="{{ url_for('users_app.details', user_id=article['author']) }}">
+          {{ author_name }}
+        </a>
+        </h6>
+      <p class="card-text">{{ article['text'] }}</p>
+      <a href="{{ url_for('articles_app.list') }}">Back to articles list</a>
+      <a href="{{ url_for('articles_app.articles_by_author', author_id=article['author']) }}">Other articles by {{ author_name }}</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

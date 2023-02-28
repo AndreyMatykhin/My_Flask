@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}
+Articles list
+{% endblock %}
+{% block body %}
+<h1>Articles</h1>
+<div>
+    <div class="row">
+        {% for article_id in articles %}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h4 class="card-title">
+                    <a href="{{ url_for('articles_app.details', article_id=article_id) }}" class="card-link">{{
+                        articles[article_id]['title'] }} </a>
+                </h4>
+                <h6 class="card-subtitle mb-2 text-muted">Author:
+                    <a href="{{ url_for('users_app.details', user_id=articles[article_id]['author']) }}">
+                        {{ author[articles[article_id]['author']]['name'] }}
+                    </a>
+                    </h6>
+                <p class="card-text">{{ articles[article_id]['text'][:80] }}</p>
+                <a href="{{ url_for('articles_app.details', article_id=article_id) }}" class="card-link">More
+                    detailed</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

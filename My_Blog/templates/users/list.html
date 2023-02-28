@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+Users list
+{% endblock %}
+{% block body %}
+<h1>Users</h1>
+<div class="container">
+    <div class="row">
+    {% for user_id in users %}
+      <div class="card" style="width: 18rem;">
+        <img src="{{ users[user_id]['avatar'] }}" class="card-img-top" alt="...">
+         <div class="card-body">
+          <h5 class="card-title">
+           <a href="{{ url_for('users_app.details', user_id=user_id) }}">
+             {{ users[user_id]['name'] }}
+           </a></h5>
+         </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
