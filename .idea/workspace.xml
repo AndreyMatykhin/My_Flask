@@ -7,6 +7,13 @@
     <list default="true" id="f4d17b73-1d03-4405-bcef-5c79f178ca46" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/My_Blog/mainapp.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/mainapp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog/templates/users/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/templates/users/details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog/templates/users/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/templates/users/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog/views/articles.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/views/articles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog/views/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/views/users.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,16 +87,5 @@
       <updated>1676868276980</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/My_Blog/views/users.py</url>
-          <line>22</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

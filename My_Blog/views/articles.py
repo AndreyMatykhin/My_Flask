@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, redirect, url_for
+from flask_login import current_user
 from werkzeug.exceptions import NotFound
 from .users import USERS_LIST
 
@@ -41,18 +42,20 @@ def list():
     return render_template("articles/list.html", articles=ARTICLES_LIST, author=USERS_LIST)
 
 
-@articles_app.route("/author/<int:author_id>/", endpoint='articles_by_author')
-def articles_by_author(author_id: int):
-    author_name = USERS_LIST[author_id]['name']
-    articles = {el: ARTICLES_LIST[el] for el in ARTICLES_LIST if ARTICLES_LIST[el]['author'] == author_id}
+@articles_app.route("/author/<string:author_id>/", endpoint='articles_by_author')
+def articles_by_author(author_id: str):
+    author_name = USERS_LIST[1]['name']
+    articles = {el: ARTICLES_LIST[el] for el in ARTICLES_LIST if ARTICLES_LIST[el]['author'] == 1}
     return render_template("articles/articles_by_author.html", articles=articles, author_name=author_name)
 
 
 @articles_app.route("/<int:article_id>/", endpoint='details')
 def details(article_id: int):
-    try:
-        article = ARTICLES_LIST[article_id]
-        author_name = USERS_LIST[ARTICLES_LIST[article_id]['author']]['name']
-    except KeyError:
-        raise NotFound(f"User #{article_id} doesn't exist!")
-    return render_template('articles/details.html', article_id=article_id, article=article, author_name=author_name)
+    if current_user.is_authenticated:
+        try:
+            article = ARTICLES_LIST[article_id]
+            author_name = USERS_LIST[ARTICLES_LIST[article_id]['author']]['name']
+        except KeyError:
+            raise NotFound(f"User #{article_id} doesn't exist!")
+        return render_template('articles/details.html', article_id=article_id, article=article, author_name=author_name)
+    return redirect(url_for("auth_app.login"))
