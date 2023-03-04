@@ -48,3 +48,17 @@ def create_users():
         db.session.add(create_user)
         db.session.commit()
         print("done! created users:", create_user)
+
+
+@mainapp.cli.command("create-articles")
+def create_articles():
+    from .models import User
+    from .models import Article
+    import string, random
+    users = User.query.all()
+    for user in users:
+        text = ''.join(random.choices(string.ascii_uppercase + string.digits, k=70))
+        create_article = Article(title=f'Article by {user.username}', author_id=user.id, text=text)
+        db.session.add(create_article)
+        db.session.commit()
+        print("done! created article:", create_article)

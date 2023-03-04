@@ -6,19 +6,19 @@ Articles list
 <h1>Articles</h1>
 <div>
     <div class="row">
-        {% for article_id in articles %}
+        {% for article in articles %}
         <div class="card" style="width: 18rem;">
             <div class="card-body">
                 <h4 class="card-title">
-                    <a href="{{ url_for('articles_app.details', article_id=article_id) }}" class="card-link">{{
-                        articles[article_id]['title'] }} </a>
+                    <a href="{{ url_for('articles_app.details', article_id=article.id) }}" class="card-link">{{
+                        article.title }} </a>
                 </h4>
                 <h6 class="card-subtitle mb-2 text-muted">Author:
-                    <a href="{{ url_for('users_app.details', user_id=articles[article_id]['author']) }}">
-                        {{ author_name }}
+                    <a href="{{ url_for('users_app.details', user_id=article.author) }}">
+                        {{ article.author.username }}
                     </a>
                 </h6>
-                <p class="card-text">{{ articles[article_id]['text'][:80] }}</p>
+                <p class="card-text">{{ article.text[:30] }}</p>
                 <a href="{{ url_for('articles_app.details', article_id=article_id) }}" class="card-link">More
                     detailed</a>
             </div>
