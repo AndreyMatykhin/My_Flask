@@ -4,7 +4,7 @@ import uuid
 
 
 class Article(db.Model):
-    id = Column(db.Text(length=36), default=lambda: str(uuid.uuid4()), primary_key=True)
+    id = Column(String(length=36), default=lambda: str(uuid.uuid4()), primary_key=True)
     title = Column(String(80), nullable=False)
     author_id = Column(String(36), ForeignKey('user.id'))
     text = Column(String)

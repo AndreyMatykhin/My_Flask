@@ -1,0 +1,28 @@
+version: '3.5'
+
+services:
+  pg:
+    image: postgres:12
+    environment:
+      POSTGRES_DB: blog
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ${HOME}/dbs/flask-lesson/pgdata_dev:/var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
+
+  mainapp:
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    environment:
+      SQLALCHEMY_DATABASE_URI: 'postgresql://user:password@pg:5432/blog'
+      CONFIG_NAME: 'DevConfig'
+    volumes:
+    - ./My_Blog:/mainapp/My_Blog
+    ports:
+      - 5000:5000
+    depends_on:
+      - pg
