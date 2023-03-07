@@ -1,8 +1,12 @@
+import os
+
 from flask import Flask, render_template
+from flask_migrate import Migrate
 from .views.users import users_app
 from .views.articles import articles_app
 from .models.database import db
 from .views.auth import login_manager, auth_app
+
 
 mainapp = Flask(__name__)
 
@@ -10,12 +14,11 @@ mainapp.register_blueprint(users_app, url_prefix="/users")
 mainapp.register_blueprint(articles_app, url_prefix="/articles")
 mainapp.register_blueprint(auth_app, url_prefix="/auth")
 
-mainapp.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////tmp/blog.db"
-mainapp.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-mainapp.config["SECRET_KEY"] = "abcdefg123456"
+cfg_name = os.environ.get("CONFIG_NAME") or "ProductionConfig"
+mainapp.config.from_object(f"My_Blog.configs.{cfg_name}")
 db.init_app(mainapp)
 login_manager.init_app(mainapp)
-
+migrate = Migrate(mainapp, db)
 
 @mainapp.route("/")
 def index():
@@ -48,3 +51,17 @@ def create_users():
         db.session.add(create_user)
         db.session.commit()
         print("done! created users:", create_user)
+
+
+@mainapp.cli.command("create-articles")
+def create_articles():
+    from .models import User
+    from .models import Article
+    import string, random
+    users = User.query.all()
+    for user in users:
+        text = ''.join(random.choices(string.ascii_uppercase + string.digits, k=70))
+        create_article = Article(title=f'Article by {user.username}', author_id=user.id, text=text)
+        db.session.add(create_article)
+        db.session.commit()
+        print("done! created article:", create_article)

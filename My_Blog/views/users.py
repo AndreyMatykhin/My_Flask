@@ -4,17 +4,10 @@ from ..models import User
 
 users_app = Blueprint("users_app", __name__)
 
-USERS_LIST = {
-    1: {'name': 'Tom', 'avatar': '/static/img/1.jpg'},
-    2: {'name': 'Jack', 'avatar': '/static/img/2.jpg'},
-    3: {'name': 'Becky', 'avatar': '/static/img/3.jpg'}
-}
-
 
 @users_app.route("/", endpoint='list')
 def users_list():
-    users = User.query.all()
-    return render_template("users/list.html", users=users)
+    return render_template("users/list.html", users=User.query.all())
 
 
 @users_app.route("/<string:user_id>/", endpoint='details')

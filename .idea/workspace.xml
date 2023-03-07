@@ -7,13 +7,10 @@
     <list default="true" id="f4d17b73-1d03-4405-bcef-5c79f178ca46" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/My_Blog/mainapp.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/mainapp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_Blog/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_Blog/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_Blog/templates/users/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/templates/users/details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_Blog/templates/users/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/templates/users/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_Blog/views/articles.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/views/articles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_Blog/views/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/views/users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog/models/article.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/models/article.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog/templates/articles/articles_by_author.html" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/templates/articles/articles_by_author.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -44,7 +41,7 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/m_andrey/My_stady/DZ/My_Flask/My_Blog/views&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/m_andrey/My_stady/DZ/My_Flask&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
@@ -52,6 +49,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/My_Blog/views" />
       <recent name="$PROJECT_DIR$/My_Blog/templates/articles" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
@@ -61,6 +61,8 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="CONFIG_NAME" value="DevConfig" />
+        <env name="SQLALCHEMY_DATABASE_URI" value="postgresql://user:password@pg:5432/blog" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
