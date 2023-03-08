@@ -6,7 +6,7 @@
     <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
     <title>
         {% block title %}
-            Base block
+        Base block
         {% endblock %}
     </title>
 </head>
@@ -15,7 +15,8 @@
     <nav class="navbar navbar-expand-md navbar-dark bg-primary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">My_Blog</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -24,14 +25,16 @@
                         <a class="nav-link {% if request.endpoint == 'index' -%}active{%- endif %}"
                            href="{{ url_for('index') }}">Home</a>
                     </li>
-                    <li class="nav-item">
                     {% if current_user.is_authenticated %}
-                        <a class="nav-link" href="{{ url_for('auth_app.logout') }}">Logout</a>
-                    {% else %}
-                        <a class="nav-link {% if request.endpoint == 'auth_app.login' -%}active{%- endif %}"
-                           href="{{ url_for('auth_app.login') }}">Login</a>
-                    {% endif %}
+                    <li class="nav-item">
+                        <h class="nav-link active">User: {{ current_user.username }}</h>
+                        {% else %}
+                        <a class="nav-link {% if request.endpoint == 'auth_app.login-as' -%}active{%- endif %}"
+                           href="{{ url_for('auth_app.login-as') }}">Login</a>
+                        <a class="nav-link {% if request.endpoint == 'auth_app.register' -%}active{%- endif %}"
+                           href="{{ url_for('auth_app.register') }}">Register</a>
                     </li>
+                    {% endif %}
                     <li class="nav-item">
                         <a class="nav-link {% if request.endpoint == 'users_app.list' -%}active{%- endif %}"
                            href="{{ url_for('users_app.list') }}">Users</a>
@@ -40,17 +43,22 @@
                         <a class="nav-link {% if request.endpoint == 'articles_app.list' -%}active{%- endif %}"
                            href="{{ url_for('articles_app.list') }}">Articles</a>
                     </li>
+                    {% if current_user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('auth_app.logout') }}">Logout</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
     </nav>
 </div>
- <div class="container">
+<div class="container">
     {% block body %}
-        Hello base!
+    Hello base!
     {% endblock %}
- </div>
-    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}">
-    </script>
+</div>
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}">
+</script>
 </body>
 </html>
