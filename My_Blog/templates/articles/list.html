@@ -14,7 +14,7 @@ Articles list
                         article.title}} </a>
                 </h4>
                 <h6 class="card-subtitle mb-2 text-muted">Author:
-                    <a href="{{ url_for('users_app.details', user_id=article.author) }}">
+                    <a href="{{ url_for('users_app.details', user_id=article.author.id) }}">
                         {{ article.author.username }}
                     </a>
                 </h6>
