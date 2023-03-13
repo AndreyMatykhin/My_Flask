@@ -14,8 +14,8 @@ Articles list
                         article.title}} </a>
                 </h4>
                 <h6 class="card-subtitle mb-2 text-muted">Author:
-                    <a href="{{ url_for('users_app.details', user_id=article.author.id) }}">
-                        {{ article.author.username }}
+                    <a href="{{ url_for('users_app.details', user_id=article.author.user.id) }}">
+                        {{ article.author.user.username }}
                     </a>
                 </h6>
                 <p class="card-text">{{ article.text[:30] }}</p>
@@ -24,6 +24,8 @@ Articles list
             </div>
         </div>
         {% endfor %}
+        <hr>
+        <a href="{{ url_for('articles_app.create') }}">Create new</a>
     </div>
 </div>
 {% endblock %}

@@ -1,3 +1,5 @@
+from sqlalchemy.orm import relationship
+
 from ..security import flask_bcrypt
 from sqlalchemy import Column, String, Boolean, LargeBinary
 from .database import db
@@ -14,6 +16,8 @@ class User(db.Model, UserMixin):
     avatar = Column(String(150), default='/static/img/default_avatar.jpg')
     is_staff = Column(Boolean, nullable=False, default=False)
     _password = Column(LargeBinary, nullable=False)
+
+    author = relationship("Author", uselist=False, back_populates="user")
 
     def __repr__(self):
         return f"<User #{self.id} {self.username!r}>"

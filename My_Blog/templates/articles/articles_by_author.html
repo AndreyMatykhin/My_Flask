@@ -3,7 +3,7 @@
 Articles list
 {% endblock %}
 {% block body %}
-<h1>Articles</h1>
+<h1>Articles by {{ articles[0].author.user.username }}</h1>
 <div>
     <div class="row">
         {% for article in articles %}
@@ -14,8 +14,8 @@ Articles list
                         article.title }} </a>
                 </h4>
                 <h6 class="card-subtitle mb-2 text-muted">Author:
-                    <a href="{{ url_for('users_app.details', user_id=article.author.id) }}">
-                        {{ article.author.username }}
+                    <a href="{{ url_for('users_app.details', user_id=article.author.user.id) }}">
+                        {{ article.author.user.username }}
                     </a>
                 </h6>
                 <p class="card-text">{{ article.text[:30] }}</p>

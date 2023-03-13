@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}
+Authors list
+{% endblock %}
+{% block body %}
+<h1>Authors</h1>
+<div class="container">
+    <div class="row">
+        {% if authors %}
+        {% for author in authors %}
+        <div class="card" style="width: 18rem;">
+            <img src="{{ author.user.avatar }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a href="{{ url_for('users_app.details', user_id=author.user.id) }}">{{ author.user.username }}</a>
+                    {% if author.user.is_staff %}
+                    <span class="badge bg-secondary">staff</span>
+                    {% endif %}
+                </h5>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <h3>No authors yet</h3>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
