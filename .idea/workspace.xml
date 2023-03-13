@@ -6,16 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="f4d17b73-1d03-4405-bcef-5c79f178ca46" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_Blog/configs.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/configs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/My_Blog/mainapp.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/mainapp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog/migrations/versions/064163ca3a2f_change_user_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog/migrations/versions/512f6a963bfe_create_table.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog/migrations/versions/ca820edfbf5d_upgrade_user_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog/migrations/versions/f0fdefeb913a_add_email_in_user_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog/models/article.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/models/article.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/My_Blog/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/models/user.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/My_Blog/templates/articles/articles_by_author.html" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/templates/articles/articles_by_author.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/My_Blog/templates/articles/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/templates/articles/details.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/My_Blog/templates/articles/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/templates/articles/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_Blog/templates/auth/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/templates/auth/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/My_Blog/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_Blog/views/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/views/auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog/templates/users/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/templates/users/details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog/views/articles.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/views/articles.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

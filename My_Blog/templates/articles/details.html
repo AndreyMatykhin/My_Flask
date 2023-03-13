@@ -8,13 +8,13 @@
   <div class="card">
     <div class="card-body">
       <h6 class="card-subtitle mb-2 text-muted">Author:
-        <a href="{{ url_for('users_app.details', user_id=article.author.id) }}">
-          {{ article.author.username }}
+        <a href="{{ url_for('users_app.details', user_id=article.author.user.id) }}">
+          {{ article.author.user.username }}
         </a>
         </h6>
       <p class="card-text">{{ article.text }}</p>
       <a href="{{ url_for('articles_app.list') }}">Back to articles list</a>
-      <a href="{{ url_for('articles_app.articles_by_author', author_id=article.author_id) }}">Other articles by {{ article.author.username }}</a>
+      <a href="{{ url_for('articles_app.articles_by_author', author_id=article.author.id) }}">Other articles by {{ article.author.user.username }}</a>
     </div>
   </div>
 </div>
