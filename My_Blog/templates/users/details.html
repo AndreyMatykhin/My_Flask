@@ -10,6 +10,6 @@
   </h1>
   <div>
     <a href="{{ url_for('users_app.list') }}">Back to users list</a>
-    <a href="{{ url_for('articles_app.articles_by_author', author_id=user.id ) }}">Other articles by {{ user.username }}</a>
+    <a href="{{ url_for('articles_app.articles_by_author', author_id=user.author.id ) }}">Other articles by {{ user.username }}</a>
   </div>
 {% endblock %}

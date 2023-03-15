@@ -3,6 +3,7 @@ import os
 from flask import Flask, render_template
 from flask_migrate import Migrate
 from .views.users import users_app
+from .views.authors import authors_app
 from .views.articles import articles_app
 from .models.database import db
 from .views.auth import login_manager, auth_app
@@ -11,6 +12,7 @@ from .security import flask_bcrypt
 mainapp = Flask(__name__)
 
 mainapp.register_blueprint(users_app, url_prefix="/users")
+mainapp.register_blueprint(authors_app, url_prefix="/authors")
 mainapp.register_blueprint(articles_app, url_prefix="/articles")
 mainapp.register_blueprint(auth_app, url_prefix="/auth")
 
@@ -52,13 +54,13 @@ def create_users():
 
 @mainapp.cli.command("create-articles")
 def create_articles():
-    from .models import User
+    from .models import Author
     from .models import Article
     import string, random
-    users = User.query.all()
-    for user in users:
-        text = ''.join(random.choices(string.ascii_uppercase + string.digits, k=70))
-        create_article = Article(title=f'Article by {user.username}', author_id=user.id, text=text)
+    authors = Author.query.all()
+    for author in authors:
+        text = ''.join(random.choices(string.ascii_uppercase + string.digits, k=170))
+        create_article = Article(title=f'Article by {author.user.username}', author_id=author.id, text=text)
         db.session.add(create_article)
         db.session.commit()
         print("done! created article:", create_article)

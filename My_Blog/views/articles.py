@@ -1,7 +1,11 @@
-from flask import Blueprint, render_template, redirect, url_for
-from flask_login import current_user
+from flask import Blueprint, render_template, redirect, url_for, request, current_app
+from flask_login import current_user, login_required
+from sqlalchemy.exc import IntegrityError
 from werkzeug.exceptions import NotFound
-from ..models import Article
+
+from ..forms.article import CreateArticleForm
+from ..models import Article, Author
+from ..models.database import db
 
 articles_app = Blueprint("articles_app", __name__)
 
@@ -24,3 +28,30 @@ def details(article_id: int):
             raise NotFound(f"User #{article_id} doesn't exist!")
         return render_template('articles/details.html', article=article)
     return redirect(url_for("auth_app.login"))
+
+
+@articles_app.route("/create/", methods=["GET", "POST"], endpoint="create")
+@login_required
+def create_article():
+    error = None
+    form = CreateArticleForm(request.form)
+    if request.method == "POST" and form.validate_on_submit():
+        article = Article(title=form.title.data.strip(), text=form.text.data)
+        db.session.add(article)
+        if current_user.author:
+            article.author = current_user.author
+        else:
+            author = Author(user_id=current_user.id)
+            db.session.add(author)
+            db.session.flush()
+            article.author = author
+
+        try:
+            db.session.commit()
+        except IntegrityError:
+            current_app.logger.exception("Could not create a new article!")
+            error = "Could not create article!"
+        else:
+            return redirect(url_for("articles_app.details", article_id=article.id))
+
+    return render_template("articles/create.html", form=form, error=error)
