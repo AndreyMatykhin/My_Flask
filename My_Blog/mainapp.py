@@ -64,3 +64,13 @@ def create_articles():
         db.session.add(create_article)
         db.session.commit()
         print("done! created article:", create_article)
+
+
+@mainapp.cli.command("create-tags")
+def create_tags():
+    from .models import Tag
+    for name in ["flask", "django", "python", "sqlalchemy", "news"]:
+        tag = Tag(name=name)
+        db.session.add(tag)
+        db.session.commit()
+    print("created tags")
