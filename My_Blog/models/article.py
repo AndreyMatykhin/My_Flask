@@ -3,6 +3,7 @@ from datetime import datetime
 from sqlalchemy import Column, String, Boolean, ForeignKey, DateTime, func
 from sqlalchemy.orm import relationship
 
+from .artical_tag import article_tag_association_table
 from .database import db
 import uuid
 
@@ -17,6 +18,8 @@ class Article(db.Model):
     delete = Column(Boolean, nullable=False, default=False)
 
     author = relationship("Author", back_populates="articles")
+    tags = relationship("Tag", secondary=article_tag_association_table, back_populates="articles",
+                        )
 
     def __repr__(self):
         return f"<Article #{self.id} {self.title!r} {self.author!r}>"
