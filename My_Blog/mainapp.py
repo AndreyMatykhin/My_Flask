@@ -8,6 +8,7 @@ from .views.articles import articles_app
 from .models.database import db
 from .views.auth import login_manager, auth_app
 from .security import flask_bcrypt
+from .admin import admin
 
 mainapp = Flask(__name__)
 
@@ -16,12 +17,14 @@ mainapp.register_blueprint(authors_app, url_prefix="/authors")
 mainapp.register_blueprint(articles_app, url_prefix="/articles")
 mainapp.register_blueprint(auth_app, url_prefix="/auth")
 
+
 cfg_name = os.environ.get("CONFIG_NAME") or "ProductionConfig"
 mainapp.config.from_object(f"My_Blog.configs.{cfg_name}")
 db.init_app(mainapp)
 login_manager.init_app(mainapp)
 migrate = Migrate(mainapp, db)
 flask_bcrypt.init_app(mainapp)
+admin.init_app(mainapp)
 
 
 @mainapp.route("/")
@@ -32,11 +35,11 @@ def index():
 @mainapp.cli.command("create-admin")
 def create_admin():
     from .models import User
-    admin = User(username="admin", email='admin@default.com', is_staff=True)
-    admin.password = os.environ.get("ADMIN_PASSWORD") or "adminpass"
-    db.session.add(admin)
+    admin_user = User(username="admin", email='admin@default.com', is_staff=True)
+    admin_user.password = os.environ.get("ADMIN_PASSWORD") or "adminpass"
+    db.session.add(admin_user)
     db.session.commit()
-    print("done! created admin:", admin)
+    print("done! created admin:", admin_user)
 
 
 @mainapp.cli.command("create-default-users")

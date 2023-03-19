@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4d17b73-1d03-4405-bcef-5c79f178ca46" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_Blog/forms/article.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/forms/article.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_Blog/mainapp.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/mainapp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_Blog/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_Blog/models/article.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/models/article.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_Blog/templates/articles/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/templates/articles/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_Blog/templates/articles/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/templates/articles/details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_Blog/views/articles.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/views/articles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/models/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -91,5 +86,16 @@
       <updated>1676868276980</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/My_Blog/models/article.py</url>
+          <line>7</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
