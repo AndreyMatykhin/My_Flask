@@ -22,6 +22,9 @@ class User(db.Model, UserMixin):
     def __repr__(self):
         return f"<User #{self.id} {self.username!r}>"
 
+    def __str__(self):
+        return self.username
+
     @property
     def password(self):
         return self._password
@@ -31,4 +34,4 @@ class User(db.Model, UserMixin):
         self._password = flask_bcrypt.generate_password_hash(value)
 
     def validate_password(self, password) -> bool:
-        return  flask_bcrypt.check_password_hash(self._password, password)
+        return flask_bcrypt.check_password_hash(self._password, password)

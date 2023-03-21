@@ -10,3 +10,6 @@ class Author(db.Model):
 
     user = relationship("User", back_populates="author")
     articles = relationship("Article", back_populates="author")
+
+    def __str__(self):
+        return f'{self.user.first_name} {self.user.last_name}'
