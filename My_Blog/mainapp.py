@@ -2,6 +2,8 @@ import os
 
 from flask import Flask, render_template
 from flask_migrate import Migrate
+
+from .api import init_api
 from .views.users import users_app
 from .views.authors import authors_app
 from .views.articles import articles_app
@@ -17,7 +19,6 @@ mainapp.register_blueprint(authors_app, url_prefix="/authors")
 mainapp.register_blueprint(articles_app, url_prefix="/articles")
 mainapp.register_blueprint(auth_app, url_prefix="/auth")
 
-
 cfg_name = os.environ.get("CONFIG_NAME") or "ProductionConfig"
 mainapp.config.from_object(f"My_Blog.configs.{cfg_name}")
 db.init_app(mainapp)
@@ -25,6 +26,7 @@ login_manager.init_app(mainapp)
 migrate = Migrate(mainapp, db)
 flask_bcrypt.init_app(mainapp)
 admin.init_app(mainapp)
+api = init_api(mainapp)
 
 
 @mainapp.route("/")
