@@ -1,4 +1,6 @@
 from flask_combo_jsonapi import ResourceDetail, ResourceList
+
+from ..permissions.user import UserPermission
 from ..schemas import UserSchema
 from ..models.database import db
 from ..models import User
@@ -17,4 +19,5 @@ class UserDetail(ResourceDetail):
     data_layer = {
         "session": db.session,
         "model": User,
+        "permission_get": [UserPermission],
     }

@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f4d17b73-1d03-4405-bcef-5c79f178ca46" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_Blog/configs.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/configs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_Blog/mainapp.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/mainapp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog/api/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/api/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog/api/article.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/api/article.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog/api/author.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/api/author.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog/api/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/api/user.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My_Blog/views/articles.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/views/articles.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,9 +60,9 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
         <env name="CONFIG_NAME" value="DevConfig" />
-        <env name="SQLALCHEMY_DATABASE_URI" value="postgresql://user:password@pg:5432/blog" />
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="SQLALCHEMY_DATABASE_URI" value="postgresql://user:password@localhost:5432/blog" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
