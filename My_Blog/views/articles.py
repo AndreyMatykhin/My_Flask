@@ -22,14 +22,14 @@ def articles_by_author(author_id: str):
 
 
 @articles_app.route("/<string:article_id>/", endpoint='details')
-def details(article_id: int):
+def details(article_id: str):
     if current_user.is_authenticated:
         article = Article.query.filter_by(id=article_id).options(
             joinedload(Article.tags)).one_or_none()
         if article is None:
             raise NotFound(f"User #{article_id} doesn't exist!")
         return render_template('articles/details.html', article=article)
-    return redirect(url_for("auth_app.login"))
+    return redirect(url_for("auth_app.login-as"))
 
 
 @articles_app.route("/create/", methods=["GET", "POST"], endpoint="create")
