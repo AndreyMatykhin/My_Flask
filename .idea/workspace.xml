@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4d17b73-1d03-4405-bcef-5c79f178ca46" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_Blog/api/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/api/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_Blog/api/article.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/api/article.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_Blog/api/author.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/api/author.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_Blog/api/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/api/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/My_Blog/views/articles.py" beforeDir="false" afterPath="$PROJECT_DIR$/My_Blog/views/articles.py" afterDir="false" />
-    </list>
+    <list default="true" id="f4d17b73-1d03-4405-bcef-5c79f178ca46" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
